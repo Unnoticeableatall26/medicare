@@ -1,0 +1,8 @@
+# files ignored by default
+/shelf/
+/workspace.xml
+# Editor-based HTTP client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
