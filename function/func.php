@@ -46,10 +46,10 @@ class func{
     }
 
     public function check_Token(){
-        //token_origin = $2y$10$z498Zm8y7V8WZSpzDs9ioeF.bZ4hwoXmZC.6nnNVnZfY.pNj29oR6;
+        //token_origin = $2y$10$z498Zm8y7V8WZSpzDs9ioeF.bZ4hwoXmZC.6nnNVnZfY.pNj29oR6; (Input length must be multiple of 16 when decrypting with padded cipher)
         $url = $this->get_UrlOptions();
         if ($url[1] === "Jiojio000608."){
-            //var_dump($this->ASE->encrypt("Jiojio000608."));
+            //var_dump($this->ASE->encrypt("GMBoy262626"));
             return true;
         }else{
             return false;
@@ -73,7 +73,7 @@ class func{
 
         return $options;
     }
-
+    //http://localhost/api/function/func.php?func=get_All_from_Table&token= (Input length must be multiple of 16 when decrypting with padded cipher)  =clients
     //http://localhost/api/function/func.php?func=get_All_from_Table&token=$2y$10$z498Zm8y7V8WZSpzDs9ioeF.bZ4hwoXmZC.6nnNVnZfY.pNj29oR6&t=clients
     public function get_All_from_Table($name_table){
         $sql = "SELECT * FROM " . $name_table;
@@ -97,7 +97,7 @@ class func{
         echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
     }
 
-    //http://localhost/api/function/func.php?func=inscription&token=$2y$10$z498Zm8y7V8WZSpzDs9ioeF.bZ4hwoXmZC.6nnNVnZfY.pNj29oR6&t=clients&values=hou,zeyu,1998-05-12,houzeyu7@gmail.com,33 rue louise weiss 75013 paris,Jiojio000608.,0695867276
+    //http://localhost/api/function/func.php?func=inscription&token=$2y$10$z498Zm8y7V8WZSpzDs9ioeF.bZ4hwoXmZC.6nnNVnZfY.pNj29oR6&t=clients&values=maceo, test, 2003-03-26, totesreal26@gmail.com, 24 rue xxxxx 97220, paris, 79472374, 0626540628
     public function inscription($name_table,$options){
         $values = array();
         foreach (explode(",",$options) as $v){
@@ -160,7 +160,7 @@ class func{
     public function test(){
         require_once "AES.php";
         $Ase = new AES();
-        $res_crypt = $Ase->encrypt("houzeyu7@gmail.com,Jiojio000608.");
+        $res_crypt = $Ase->encrypt("totesreal26@gmail.com, GMBoy262626");
         var_dump($res_crypt);
         $res_decrypt = $Ase->decrypt("KmwHIJiFla9W0MTlRAwdZg==");
         var_dump($res_decrypt);
